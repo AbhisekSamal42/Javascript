@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Examples</title>
+</head>
+<body>
+  <h1 id="main-title">Hello World</h1>
+  <p class="myClass">This is <b>paragraph 1</b>.</p>
+  <p class="myClass">This is <i>paragraph 2</i>.</p>
+  <div id="content">Initial Content</div>
+  
+  <script>
+    // 1. getElementById()
+    let title = document.getElementById("main-title");
+    console.log(title.innerText);
+
+    // 2. innerText
+    title.innerText = "Changed with innerText";
+    console.log(title.innerText);
+
+    // 3. textContent
+    let para1 = document.querySelector("p");
+    console.log(para1.textContent); 
+
+    // 4. innerHTML
+    let content = document.getElementById("content");
+    content.innerHTML = "<b>New Bold Content</b>";
+
+    // 5. getElementsByClassName()
+    let paras = document.getElementsByClassName("myClass");
+    console.log(paras[0].innerText); 
+    console.log(paras[1].innerText); 
+
+    // 6. querySelector() → returns first match
+    let firstPara = document.querySelector(".myClass");
+    console.log(firstPara.innerText); 
+
+    // 7. querySelectorAll() → returns all matches
+    let allParas = document.querySelectorAll(".myClass");
+    allParas.forEach((p, i) => console.log(`Para ${i+1}: ${p.innerText}`));
+  </script>
+</body>
+</html>
