@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Methods Example</title>
+</head>
+<body>
+  <h2 id="title" class="heading">Hello DOM</h2>
+  <div id="box">This is a box.</div>
+
+  <script>
+    let title = document.getElementById("title");
+    let box = document.getElementById("box");
+
+    // 1. getAttribute()
+    console.log(title.getAttribute("class")); 
+
+    // 2. setAttribute()
+    title.setAttribute("class", "new-heading"); 
+    console.log(title.getAttribute("class")); 
+
+    // 3. node.style (inline CSS)
+    box.style.color = "white";
+    box.style.backgroundColor = "blue";
+    box.style.padding = "10px";
+
+    // 4. node.append(el) → add element at the END
+    let newPara = document.createElement("p");
+    newPara.innerText = "Appended paragraph.";
+    box.append(newPara);
+
+    // 5. node.prepend(el) → add element at the START
+    let startPara = document.createElement("p");
+    startPara.innerText = "Prepended paragraph.";
+    box.prepend(startPara);
+
+    // 6. node.after(el) → insert AFTER node
+    let afterDiv = document.createElement("div");
+    afterDiv.innerText = "Inserted AFTER the box.";
+    box.after(afterDiv);
+
+    // 7. node.before(el) → insert BEFORE node
+    let beforeDiv = document.createElement("div");
+    beforeDiv.innerText = "Inserted BEFORE the box.";
+    box.before(beforeDiv);
+
+    // 8. node.remove() → removes element
+    // remove the title after 3 seconds
+    setTimeout(() => {
+      title.remove();
+    }, 3000);
+  </script>
+</body>
+</html>
