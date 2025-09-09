@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>addEventListener Example</title>
+</head>
+<body>
+    <button id="listenerButton">addEventListener Button</button>
+
+    <script>
+        const button = document.getElementById('listenerButton');
+
+        button.addEventListener('click', function(event) {
+            console.log('First Listener - Type:', event.type);
+            console.log('Target:', event.target);
+        });
+
+        button.addEventListener('click', function(event) {
+            console.log('Second Listener - Timestamp:', event.timeStamp);
+            alert('addEventListener button clicked!');
+        });
+
+        button.addEventListener('click', function(event) {
+            console.log('Capture Phase Listener');
+        }, { capture: true }); 
+    </script>
+</body>
+</html>

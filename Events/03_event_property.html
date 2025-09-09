@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event property</title>
+</head>
+
+<body>
+    <button id="propButton">Event Property</button>
+    <script>
+        const button = document.getElementById('propButton')
+        button.onclick = function (event) {
+            console.log('Event Type :', event.type);
+            console.log('Event Current Target :', event.currentTarget);
+            alert('Event Property Button Clicked.')
+
+        }
+    </script>
+</body>
+
+</html>
